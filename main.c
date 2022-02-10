@@ -1,6 +1,10 @@
 /*
-    Noah Arwine     COP4020_Project_1
-    
+    Noah Arwine                                     COP4020_Project_1                                           02/09/2022
+
+    Main.c is the heart of the application. It ties in lex and parse and requests an input for a filename from the user.
+    Once the file has successfully opened, it reads until it finds the word "BEGIN", at which point it will read one word into
+    into lex. Once lex returns a value, it places said value into parse. It repeats these steps until it finds the word "END". At
+    which point it returns the resulting text.
 */
 
 
@@ -17,15 +21,18 @@ int main(){
     char lexVal[20];
     char c;
     printf("Please enter the filename to be checked: ");
-    gets(string);
+    scanf("%s", string);
     file = fopen(string, "r");
     c = fgetc(file);
+    int i;
     while(c != EOF){ //This loop runs through the entire file
         while(!isspace(c)){
-            printf("%c", c);
-            strcpy(lexVal, readVal(c)); //This while loop pulls a single word in for lex analysis
+            // printf("%c", c);
+            readVal(c);
             c = fgetc(file);
         }
+        sendVal();
+        // strcpy(lexVal, readVal(c)); //This while loop pulls a single word in for lex analysis
         
         c = fgetc(file);
 
