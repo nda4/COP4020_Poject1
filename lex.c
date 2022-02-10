@@ -14,16 +14,15 @@ char* readVal(char nextVal){
         lexeme[counter] = nextVal;
         counter++;
     }
-    if(nextVal == " "){
-        sendVal();
-        counter = 0;
-    }
     return "a";
 }
 
 void sendVal(){
     // counter = 0;
     for(int i = 0; i < counter; i++){
+        // printf("%i ", i);
         printf("%s", &lexeme[i]);
     }
+    counter = 0;
+    printf(" ");
 }
