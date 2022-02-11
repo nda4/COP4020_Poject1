@@ -13,14 +13,15 @@
 #include <ctype.h>
 #include <string.h>
 
-char* readVal(char nextVal);
+void readVal(char nextVal);
+void returnLex();
 char* lexeme[20];
+char* analyzed[20];
 int counter;
 
 void sendVal();
+bool checkForHeaders();
 
-bool isNum();
-bool isLetter();
 
 
 

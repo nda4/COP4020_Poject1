@@ -1,5 +1,5 @@
-Hello world how are you doing today?
-I am doing quite well, thank you.
-This is a continuation of the test. This
+~Hello world how are you doing today?
+begin I am doing quite well, thank you.
+This is end a continuation of the test. This
 should hopefully be more than 20 char.
 

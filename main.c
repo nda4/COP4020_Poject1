@@ -11,7 +11,6 @@
 
 
 #include "lex.h"
-#include "parse.h"
 #include <stdlib.h>
 
 
@@ -25,17 +24,28 @@ int main(){
     file = fopen(string, "r");
     c = fgetc(file);
     int i;
+    bool isBegin = false;
+    bool start = false;
     while(c != EOF){ //This loop runs through the entire file
-        while(!isspace(c)){
-            // printf("%c", c);
-            readVal(c);
+        if(c == '~')
+            while( c != '\n')
+                c = fgetc(file);
+            while(!isspace(c)){
+                // printf("%c", c);
+                readVal(c);
+                c = fgetc(file);
+            }
+            // printf("%c", lexeme[0],lexeme[1],lexeme[2],lexeme[3],lexeme[4]);
+            if(!start)
+                start = checkForHeaders();
+            if(lexeme[0] == 'e' && lexeme[1] == 'n' && lexeme[2] == 'd')
+                start = false;
+            if(start && lexeme[0] != NULL)
+                returnLex();
+            // sendVal();
+            // strcpy(lexVal, readVal(c)); //This while loop pulls a single word in for lex analysis
+            
             c = fgetc(file);
-        }
-        sendVal();
-        // strcpy(lexVal, readVal(c)); //This while loop pulls a single word in for lex analysis
-        
-        c = fgetc(file);
-
     };
         
     fclose(file);
