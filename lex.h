@@ -12,6 +12,9 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
+#include <stdlib.h>
+
+
 
 void readVal(char nextVal);
 void returnLex();
@@ -21,6 +24,8 @@ int counter;
 
 void sendVal();
 bool checkForHeaders();
+char* determineAnalyze();
+
 
 
 

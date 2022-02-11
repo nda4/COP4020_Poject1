@@ -11,10 +11,10 @@
 
 
 #include "lex.h"
-#include <stdlib.h>
 
 
 int main(){
+    printf("--------------------------------------------------------------------------------\n\n");
     FILE * file;
     char string[100];
     char lexVal[20];
@@ -26,6 +26,7 @@ int main(){
     int i;
     bool isBegin = false;
     bool start = false;
+    printf("\nOpening File: \n\n");
     while(c != EOF){ //This loop runs through the entire file
         if(c == '~')
             while( c != '\n')
@@ -38,7 +39,7 @@ int main(){
             // printf("%c", lexeme[0],lexeme[1],lexeme[2],lexeme[3],lexeme[4]);
             if(!start)
                 start = checkForHeaders();
-            if(lexeme[0] == 'e' && lexeme[1] == 'n' && lexeme[2] == 'd')
+            if(lexeme[0] == 'e' && lexeme[1] == 'n' && lexeme[2] == 'd' && lexeme[3] == '.')
                 start = false;
             if(start && lexeme[0] != NULL)
                 returnLex();
@@ -47,6 +48,6 @@ int main(){
             
             c = fgetc(file);
     };
-        
+    printf("\n\n--------------------------------------------------------------------------------");
     fclose(file);
 }
