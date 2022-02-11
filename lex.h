@@ -15,7 +15,7 @@
 #include <stdlib.h>
 
 
-
+bool isOperator(char c);
 void readVal(char nextVal);
 void returnLex();
 char* lexeme[20];

@@ -40,20 +40,38 @@ char* determineAnalyze(){
         hasSemi = true;
     if(isalpha(lexeme[0])){
         for(int i = 1; i < counter; i++){
+            if(isOperator(lexeme[i])){
+                checkParse("<identifier>");
+                analasis = "<operator>";
+            }
             if(lexeme[i] == '_')
                 if(lexeme[i+1] == '_'){
                     analasis = "<double_under>";
                 }
-            if(isdigit(lexeme[counter-1]))
+            if(isdigit(lexeme[counter-1]) || (hasSemi && isdigit(lexeme[counter - 2])))
                 analasis = "<ends_with_num>";
         }
     }
+    else if(isOperator(lexeme[0])){
+        if(counter = 1)
+            return "<operator>";
+        else
+            checkParse("<operator>");
+    }
     else
         analasis = "<unknown>";
-    // if(hasSemi)
-    //     strcpy(analasis, identifier);
-    printf("lol");
-    return identifier, analasis;
+    if(hasSemi){
+        checkParse(analasis);
+        return "<semicolon>";
+    }
+    else
+        return analasis;
+}
+
+bool isOperator(char c){
+    if(c == '+' || c == '-' || c == '*' || c == '/' || c == '=')
+        return true;
+    return false;
 }
 
 bool checkForHeaders(){
@@ -67,6 +85,8 @@ bool checkForHeaders(){
     }
     return false;
 }
+
+
 
 void sendVal(){
     // counter = 0;
