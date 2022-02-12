@@ -8,4 +8,4 @@ lex: lex.c
 	gcc -c lex.h lex.c
 
 clean:
-	rm lex.o parse.o letsagoitsameamario
+	rm lex.o parse.o parse.h.gch lex.h.gch letsagoitsameamario

@@ -3,7 +3,3 @@ begin
   a = b+2;
 end.
 
-begin
-  a_ = b;
-  a = b+2;
-end.
