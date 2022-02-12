@@ -8,8 +8,7 @@
     successfully identifies a word/letter and send the result to parse. However, Parse is unfinished and therfore only prints out the
     recieved text from lex.
 
-    HOW TO RUN: Please type "make", there will be a prompt for a textFile, as I was unable to reach the point of adding a script, you will need
-    to type "a1" or "a2" followed by Enter.
+    HOW TO RUN: Please type ./script.sh. This will run the program 8 times, each with a different file. You can ignore the prompt to enter filename
 
     Reading Results: The output will be the results from Lex: a '<text>' surrounding the text is the name of the type of text it found. It sends
     parentheses, identifier(vairables), operator, semicolon, and constants. It also sends various "~text~". These are errors found such as double
@@ -22,7 +21,7 @@
 
 int main()
 {
-    printf("--------------------------------------------------------------------------------\n\n");
+    printf("-------------------------------\n");
     FILE *file;
     char string[100];
     char lexVal[20];
@@ -60,6 +59,6 @@ int main()
 
         c = fgetc(file);
     };
-    printf("\n\n--------------------------------------------------------------------------------\n");
+    printf("\n_______________________________________________________________________________________________________________\n\n\n");
     fclose(file);
 }

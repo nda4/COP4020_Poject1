@@ -1,7 +1,6 @@
 run: parse lex main.c
 	gcc -w -o letsagoitsameamario lex.o parse.o main.c
-	./letsagoitsameamario
-	make clean
+	
 parse: lex parse.c
 	gcc -c -w parse.h parse.c
 lex: lex.c
