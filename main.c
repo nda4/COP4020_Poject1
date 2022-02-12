@@ -13,7 +13,7 @@
 
     Reading Results: The output will be the results from Lex: a '<text>' surrounding the text is the name of the type of text it found. It sends
     parentheses, identifier(vairables), operator, semicolon, and constants. It also sends various "~text~". These are errors found such as double
-    underscores.
+    underscores. THE VALUES ARE READ AS ~Errorname~ <Value> EVEN IF THERE IS AN ERROR. It will guess what it is supposed to be.
 */
 
 
